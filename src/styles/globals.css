@@ -23,11 +23,11 @@
     --transition: all 0.3s ease;
 }
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 html {
     scroll-behavior: smooth;
@@ -54,9 +54,9 @@ img {
     display: block;
 }
 
-section {
+/* section {
     padding: 120px 24px;
-}
+} */
 
 .container {
     width: 100%;

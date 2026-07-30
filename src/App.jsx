@@ -1,6 +1,5 @@
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
-import Stats from './sections/Stats';
 import Services from './sections/Services';
 import FeaturedProjects from './sections/FeaturedProjects';
 import Process from './sections/Process';
@@ -15,15 +14,14 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <Stats />
-      <Services />
+      <Services /> 
       <FeaturedProjects />
       <Process />
       <CreativeGallery />
       <About />
       <Testimonials />
       <Contact />
-      <Footer />
+      <Footer /> 
     </>
   );
 }
