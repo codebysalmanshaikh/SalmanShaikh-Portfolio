@@ -10,7 +10,7 @@ function Hero() {
             {/* Background Glow */}
             <div className="absolute left-1/2 top-40 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-600/20 blur-[140px]" />
 
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-7xl px-6 mt-20">
 
                 <motion.div
                     initial={{ opacity: 0, y: 35 }}
@@ -19,11 +19,11 @@ function Hero() {
                     className="max-w-4xl"
                 >
 
-                    <p className="mb-4 mt-14 text-sm uppercase tracking-[0.25em] text-violet-400">
+                    {/* <p className="mb-4 mt-14 text-sm uppercase tracking-[0.25em] text-violet-400">
 
                         Performance Marketing • Meta Ads • Video Editing
 
-                    </p>
+                    </p> */}
 
                     <h1 className="font-['Space_Grotesk'] text-5xl font-bold leading-tight text-white md:text-7xl">
 
@@ -37,11 +37,15 @@ function Hero() {
 
                     </h1>
 
+                    <p className="mb-4 mt-6 text-sm uppercase tracking-[0.25em] text-violet-400">
+
+                        Performance Marketing • Meta Ads • Video Editing
+
+                    </p>
+
                     <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
 
-                        I help businesses generate profitable growth through
-                        Meta advertising, conversion-focused creatives,
-                        and data-driven optimization.
+                        I help businesses grow through Meta Ads, Google Ads, high-converting websites, compelling creatives, and data-driven marketing strategies.
 
                     </p>
 
@@ -104,7 +108,7 @@ function Hero() {
 
                             <h3 className="font-['Space_Grotesk'] text-3xl font-bold">
 
-                                18+
+                                76+
 
                             </h3>
 

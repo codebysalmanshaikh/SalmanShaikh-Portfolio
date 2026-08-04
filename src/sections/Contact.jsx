@@ -1,185 +1,5 @@
-// import { motion } from "framer-motion";
-// import {
-//     Mail,
-//     Phone,
-//     MapPin,
-//     ArrowUpRight,
-//     Linkedin,
-//     Instagram,
-// } from "lucide-react";
-
-// function Contact() {
-//     return (
-//         <section id="contact" className="py-28">
-//             <div className="mx-auto max-w-7xl px-6">
-//                 <motion.div
-//                     initial={{ opacity: 0, y: 35 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 0.6 }}
-//                     viewport={{ once: true }}
-//                     className="mx-auto max-w-3xl text-center"
-//                 >
-//                     <p className="text-sm uppercase tracking-[0.25em] text-violet-400">
-//                         Contact
-//                     </p>
-
-//                     <h2 className="mt-4 font-['Space_Grotesk'] text-4xl font-bold text-white md:text-6xl">
-//                         Let's build something
-//                         <br />
-//                         that delivers results.
-//                     </h2>
-
-//                     <p className="mt-6 text-lg leading-8 text-zinc-400">
-//                         Whether you need Meta Ads management, creative strategy,
-//                         or high-converting video ads, I'm always open to discussing
-//                         new projects and collaborations.
-//                     </p>
-//                 </motion.div>
-
-//                 <div className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
-//                     {/* Left */}
-//                     <motion.div
-//                         initial={{ opacity: 0, x: -35 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         transition={{ duration: 0.6 }}
-//                         viewport={{ once: true }}
-//                         className="space-y-6"
-//                     >
-//                         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-//                             <Mail className="text-violet-400" size={28} />
-
-//                             <h3 className="mt-6 font-['Space_Grotesk'] text-2xl font-semibold text-white">
-//                                 Email
-//                             </h3>
-
-//                             <p className="mt-3 text-zinc-400">
-//                                 salmans3724@gmail.com
-//                             </p>
-//                         </div>
-
-//                         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-//                             <Phone className="text-violet-400" size={28} />
-
-//                             <h3 className="mt-6 font-['Space_Grotesk'] text-2xl font-semibold text-white">
-//                                 Phone
-//                             </h3>
-
-//                             <p className="mt-3 text-zinc-400">
-//                                 +91 XXXXX XXXXX
-//                             </p>
-//                         </div>
-
-//                         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-//                             <MapPin className="text-violet-400" size={28} />
-
-//                             <h3 className="mt-6 font-['Space_Grotesk'] text-2xl font-semibold text-white">
-//                                 Location
-//                             </h3>
-
-//                             <p className="mt-3 text-zinc-400">
-//                                 Pune, Maharashtra, India
-//                             </p>
-//                         </div>
-
-//                         <div className="flex gap-4 pt-2">
-//                             <a
-//                                 href="https://linkedin.com/"
-//                                 target="_blank"
-//                                 rel="noreferrer"
-//                                 className="rounded-full border border-white/10 p-4 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"
-//                             >
-//                                 <Linkedin size={22} />
-//                             </a>
-
-//                             <a
-//                                 href="https://instagram.com/"
-//                                 target="_blank"
-//                                 rel="noreferrer"
-//                                 className="rounded-full border border-white/10 p-4 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"
-//                             >
-//                                 <Instagram size={22} />
-//                             </a>
-//                         </div>
-//                     </motion.div>
-
-//                     {/* Right */}
-//                     <motion.form
-//                         initial={{ opacity: 0, x: 35 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         transition={{ duration: 0.6 }}
-//                         viewport={{ once: true }}
-//                         className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl"
-//                     >
-//                         <div className="grid gap-6 md:grid-cols-2">
-//                             <div>
-//                                 <label className="mb-3 block text-sm text-zinc-400">
-//                                     Full Name
-//                                 </label>
-
-//                                 <input
-//                                     type="text"
-//                                     placeholder="John Doe"
-//                                     className="w-full rounded-2xl border border-white/10 bg-[#0B0B0B] px-5 py-4 text-white outline-none transition focus:border-violet-500"
-//                                 />
-//                             </div>
-
-//                             <div>
-//                                 <label className="mb-3 block text-sm text-zinc-400">
-//                                     Email
-//                                 </label>
-
-//                                 <input
-//                                     type="email"
-//                                     placeholder="john@example.com"
-//                                     className="w-full rounded-2xl border border-white/10 bg-[#0B0B0B] px-5 py-4 text-white outline-none transition focus:border-violet-500"
-//                                 />
-//                             </div>
-//                         </div>
-
-//                         <div className="mt-6">
-//                             <label className="mb-3 block text-sm text-zinc-400">
-//                                 Subject
-//                             </label>
-
-//                             <input
-//                                 type="text"
-//                                 placeholder="Project Inquiry"
-//                                 className="w-full rounded-2xl border border-white/10 bg-[#0B0B0B] px-5 py-4 text-white outline-none transition focus:border-violet-500"
-//                             />
-//                         </div>
-
-//                         <div className="mt-6">
-//                             <label className="mb-3 block text-sm text-zinc-400">
-//                                 Message
-//                             </label>
-
-//                             <textarea
-//                                 rows="6"
-//                                 placeholder="Tell me about your project..."
-//                                 className="w-full resize-none rounded-2xl border border-white/10 bg-[#0B0B0B] px-5 py-4 text-white outline-none transition focus:border-violet-500"
-//                             ></textarea>
-//                         </div>
-
-//                         <button
-//                             type="submit"
-//                             className="mt-8 inline-flex items-center gap-3 rounded-full bg-violet-600 px-8 py-4 font-medium text-white transition hover:bg-violet-500"
-//                         >
-//                             Send Message
-//                             <ArrowUpRight size={20} />
-//                         </button>
-//                     </motion.form>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-// export default Contact;
-
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// Solid Icons (UI elements)
 import {
     faEnvelope,
     faPhone,
@@ -187,7 +7,6 @@ import {
     faArrowUpRightFromSquare
 } from '@fortawesome/free-solid-svg-icons';
 
-// Brands Icons (Social Media)
 import {
     faLinkedin,
     faInstagram
@@ -215,9 +34,7 @@ function Contact() {
                     </h2>
 
                     <p className="mt-6 text-lg leading-8 text-zinc-400">
-                        Whether you need Meta Ads management, creative strategy,
-                        or high-converting video ads, I'm always open to discussing
-                        new projects and collaborations.
+                        Whether you're looking to scale with Meta Ads, Google Ads, a conversion-focused website, or high-performing creatives, I'd be happy to discuss your goals and help bring your next project to life.
                     </p>
                 </motion.div>
 
@@ -238,7 +55,7 @@ function Contact() {
                             </h3>
 
                             <p className="mt-3 text-zinc-400">
-                                salmans3724@gmail.com
+                                growthstudiobysalman@gmail.com
                             </p>
                         </div>
 
@@ -250,7 +67,7 @@ function Contact() {
                             </h3>
 
                             <p className="mt-3 text-zinc-400">
-                                +91 XXXXX XXXXX
+                                +91 9028886384
                             </p>
                         </div>
 
@@ -277,7 +94,7 @@ function Contact() {
                             </a>
 
                             <a
-                                href="https://instagram.com/"
+                                href="https://www.instagram.com/growthstudiobysalman/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="rounded-full border border-white/10 p-4 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"

@@ -1,49 +1,50 @@
 import { motion } from "framer-motion";
 import {
     Megaphone,
-    BarChart3,
+    Search,
+    Globe,
     Video,
-    Target,
     PenTool,
-    TrendingUp,
+    BarChart3,
 } from "lucide-react";
+
 
 const services = [
     {
         icon: <Megaphone size={30} />,
-        title: "Meta Ads Strategy",
+        title: "Meta Ads",
         description:
-            "Campaign planning, audience research, and full-funnel strategies designed to generate profitable growth.",
+            "High-converting Facebook & Instagram ad campaigns focused on lead generation, sales, and business growth.",
     },
     {
-        icon: <Target size={30} />,
-        title: "Campaign Management",
+        icon: <Search size={30} />,
+        title: "Google Ads",
         description:
-            "Launch, monitor, and optimize Meta advertising campaigns with continuous testing and scaling.",
+            "Search, Display, and Performance Max campaigns designed to reach high-intent customers and maximize ROI.",
+    },
+    {
+        icon: <Globe size={30} />,
+        title: "Shopify & WordPress Websites",
+        description:
+            "Fast, responsive, and conversion-focused websites and landing pages built for businesses and eCommerce brands.",
     },
     {
         icon: <Video size={30} />,
         title: "Video Editing",
         description:
-            "High-converting ad creatives, reels, and performance videos optimized for engagement and conversions.",
+            "Professional ad creatives, UGC videos, reels, and short-form content optimized for performance marketing.",
     },
     {
         icon: <PenTool size={30} />,
         title: "Creative Strategy",
         description:
-            "Creative concepts, hooks, scripts, and ad angles backed by performance marketing principles.",
+            "Ad concepts, hooks, scripts, and creative direction backed by performance marketing and audience psychology.",
     },
     {
         icon: <BarChart3 size={30} />,
         title: "Tracking & Analytics",
         description:
-            "Meta Pixel, Conversion API, event tracking, and performance reporting for accurate decision-making.",
-    },
-    {
-        icon: <TrendingUp size={30} />,
-        title: "Scaling & Optimization",
-        description:
-            "Data-driven optimization to improve ROAS, reduce CPA, and scale winning campaigns profitably.",
+            "Meta Pixel, Conversion API, GA4, event tracking, and performance reporting for accurate campaign optimization.",
     },
 ];
 
@@ -65,13 +66,11 @@ function Services() {
                     <h2 className="mt-4 font-['Space_Grotesk'] text-4xl font-bold text-white md:text-6xl">
                         Everything you need
                         <br />
-                        to grow with Meta Ads.
+                        to grow your business online.
                     </h2>
 
                     <p className="mt-6 text-lg leading-8 text-zinc-400">
-                        From campaign strategy to creative production and optimization,
-                        every service is focused on helping businesses achieve measurable
-                        growth.
+                        From paid advertising and website development to creative production and analytics, every service is designed to help businesses attract, convert, and scale with confidence.
                     </p>
                 </motion.div>
 

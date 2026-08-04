@@ -1,83 +1,26 @@
-
-// import { useEffect, useState } from 'react';
-
-// const navLinks = [
-//   { name: 'Work', href: '#projects' },
-//   { name: 'Services', href: '#services' },
-//   { name: 'About', href: '#about' },
-//   { name: 'Contact', href: '#contact' },
-// ];
-
-// function Navbar() {
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-
-//     window.addEventListener('scroll', handleScroll);
-
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   return (
-//     <header
-//       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${scrolled
-//         ? 'border-b border-white/10 bg-black/70 backdrop-blur-xl'
-//         : 'bg-transparent'
-//         }`}
-//     >
-//       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-//         {/* Logo */}
-//         <a
-//           href="#hero"
-//           className="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-white"
-//         >
-//           Growth Studio By Salman<span className="text-violet-500">.</span>
-//         </a>
-
-//         {/* Navigation */}
-//         <nav className="hidden items-center gap-10 md:flex">
-//           {navLinks.map((link) => (
-//             <a
-//               key={link.name}
-//               href={link.href}
-//               className="text-sm font-medium text-zinc-400 transition hover:text-white"
-//             >
-//               {link.name}
-//             </a>
-//           ))}
-//         </nav>
-
-//         {/* CTA */}
-//         <a
-//           href="#contact"
-//           className="hidden rounded-full border border-violet-500/40 bg-violet-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-violet-500 md:inline-flex"
-//         >
-//           Let's Talk
-//         </a>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Navbar;
-
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { lenis } from "../lib/lenis";
+
+// const navLinks = [
+//   { name: "Work", href: "#projects" },
+//   { name: "Services", href: "#services" },
+//   { name: "About", href: "#about" },
+//   { name: "Contact", href: "#contact" },
+// ];
 
 const navLinks = [
-  { name: "Work", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Work", href: "#projects", id: "projects" },
+  { name: "Services", href: "#services", id: "services" },
+  { name: "About", href: "#about", id: "about" },
+  { name: "Contact", href: "#contact", id: "contact" },
 ];
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("projects");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,33 +32,45 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.45,
+        rootMargin: "-80px 0px -35% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+
   const handleNavClick = (e, href) => {
     e.preventDefault();
 
-    const target = document.querySelector(href);
-
-    if (!target) return;
-
-    const navbarHeight = 80;
-
-    const offset =
-      target.getBoundingClientRect().top +
-      window.pageYOffset -
-      navbarHeight;
-
-    window.scrollTo({
-      top: offset,
-      behavior: "smooth",
+    lenis.scrollTo(href, {
+      offset: -80,
+      duration: 1.4,
+      easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
     });
 
     setMenuOpen(false);
   };
-
   return (
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${scrolled
-          ? "border-b border-white/10 bg-black/70 backdrop-blur-xl"
-          : "bg-transparent"
+        ? "border-b border-white/10 bg-black/70 backdrop-blur-xl"
+        : "bg-transparent"
         }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
@@ -138,9 +93,24 @@ function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium text-zinc-400 transition hover:text-white"
+              className={`relative pb-2 text-sm font-medium transition ${activeSection === link.id
+                ? "text-white"
+                : "text-zinc-400 hover:text-white"
+                }`}
             >
               {link.name}
+
+              {activeSection === link.id && (
+                <motion.div
+                  layoutId="navbar-indicator"
+                  transition={{
+                    type: "spring",
+                    stiffness: 450,
+                    damping: 35,
+                  }}
+                  className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-violet-500"
+                />
+              )}
             </a>
           ))}
         </nav>
@@ -182,7 +152,10 @@ function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="border-b border-white/5 py-5 text-lg text-zinc-300 transition hover:text-white"
+                  className={`border-b border-white/5 py-5 text-lg transition ${activeSection === link.id
+                      ? "text-violet-400"
+                      : "text-zinc-300 hover:text-white"
+                    }`}
                 >
                   {link.name}
                 </a>

@@ -53,17 +53,11 @@ function About() {
                         </h2>
 
                         <p className="mt-8 text-lg leading-8 text-zinc-400">
-                            I'm Salman Shaikh, a Performance Marketing Specialist focused on
-                            Meta Ads, creative strategy, and video editing. I enjoy combining
-                            data with creativity to build campaigns that not only attract
-                            attention but also generate measurable business growth.
+                            I'm Salman Shaikh, a Performance Marketing Specialist helping businesses grow through Meta Ads, Google Ads, Shopify & WordPress websites, creative strategy, and performance-driven video editing. I combine creativity with data to build marketing systems that drive measurable business growth.
                         </p>
 
                         <p className="mt-6 text-lg leading-8 text-zinc-400">
-                            My approach is simple — understand the business, build the right
-                            strategy, continuously optimize, and scale what's working. Every
-                            campaign is treated like an investment where performance comes
-                            first.
+                            My approach is simple—understand the business, create the right growth strategy, execute with precision, and continuously optimize using real performance data. Every decision is focused on delivering long-term business results, not just clicks and impressions.
                         </p>
 
                         <div className="mt-10 flex flex-wrap gap-8">
@@ -87,7 +81,7 @@ function About() {
 
                             <div>
                                 <h3 className="font-['Space_Grotesk'] text-4xl font-bold text-white">
-                                    18+
+                                    76+
                                 </h3>
                                 <p className="mt-2 text-zinc-500">
                                     Campaigns Executed
