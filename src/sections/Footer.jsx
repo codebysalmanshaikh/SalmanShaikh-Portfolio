@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faHeart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import logo from "../assets/logo.svg";
+import { lenis } from "../lib/lenis";
 
 function Footer() {
     const year = new Date().getFullYear();
@@ -41,7 +43,7 @@ function Footer() {
                 <div className="my-16 h-px bg-white/10" />
 
                 {/* Bottom */}
-                <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+                {/* <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
                     <div>
                         <h3 className="font-['Space_Grotesk'] text-3xl font-bold text-white">
                             Salman<span className="text-violet-500">.</span>
@@ -49,6 +51,33 @@ function Footer() {
 
                         <p className="mt-3 text-zinc-500">
                             Performance Marketer • Meta Ads Specialist • Video Editor
+                        </p>
+                    </div> */}
+                <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                        <a
+                            href="#hero"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                lenis.scrollTo("#hero", {
+                                    offset: -80,
+                                    duration: 1.4,
+                                    easing: (t) => 1 - Math.pow(1 - t, 3),
+                                });
+                            }}
+                            className="inline-block"
+                        >
+                            <img
+                                src={logo}
+                                alt="Growth Studio by Salman"
+                                className="h-15 w-auto transition duration-300 hover:opacity-90"
+                                draggable="false"
+                            />
+                        </a>
+
+                        <p className="mt-4 max-w-md text-zinc-500">
+                            Helping businesses grow through Meta Ads, Google Ads, high-converting
+                            websites, creative strategy, and performance-driven marketing.
                         </p>
                     </div>
 
@@ -78,14 +107,14 @@ function Footer() {
                             <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
                         </a>
 
-                        <a
+                        {/* <a
                             href="https://github.com/"
                             target="_blank"
                             Back to top rel="noreferrer"
                             className="rounded-full border border-white/10 p-3 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"
                         >
                             <FontAwesomeIcon icon={faGithub} style={{ fontSize: '20px' }} />
-                        </a>
+                        </a> */}
                     </div>
                 </div>
 

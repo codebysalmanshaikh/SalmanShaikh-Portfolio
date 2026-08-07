@@ -2,13 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { lenis } from "../lib/lenis";
+import logo from "../assets/logo.svg";
 
-// const navLinks = [
-//   { name: "Work", href: "#projects" },
-//   { name: "Services", href: "#services" },
-//   { name: "About", href: "#about" },
-//   { name: "Contact", href: "#contact" },
-// ];
 
 const navLinks = [
   { name: "Work", href: "#projects", id: "projects" },
@@ -76,13 +71,26 @@ function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
 
-        <a
+        {/* <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
           className="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-white"
         >
           Growth Studio By Salman
           <span className="text-violet-500">.</span>
+        </a> */}
+
+        <a
+          href="#hero"
+          onClick={(e) => handleNavClick(e, "#hero")}
+          className="flex items-center"
+        >
+          <img
+            src={logo}
+            alt="Growth Studio by Salman"
+            className="h-15 w-auto transition duration-300 hover:opacity-90"
+            draggable="false"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -153,8 +161,8 @@ function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`border-b border-white/5 py-5 text-lg transition ${activeSection === link.id
-                      ? "text-violet-400"
-                      : "text-zinc-300 hover:text-white"
+                    ? "text-violet-400"
+                    : "text-zinc-300 hover:text-white"
                     }`}
                 >
                   {link.name}
