@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faHeart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
-import logo from "../assets/logo.svg";
+import logo from "../assets/logonew.svg";
 import { lenis } from "../lib/lenis";
 
 function Footer() {

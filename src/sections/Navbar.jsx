@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { lenis } from "../lib/lenis";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logonew.svg";
 
 
 const navLinks = [
