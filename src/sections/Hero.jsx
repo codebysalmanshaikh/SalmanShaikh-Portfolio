@@ -19,12 +19,6 @@ function Hero() {
                     className="max-w-4xl"
                 >
 
-                    {/* <p className="mb-4 mt-14 text-sm uppercase tracking-[0.25em] text-violet-400">
-
-                        Performance Marketing • Meta Ads • Video Editing
-
-                    </p> */}
-
                     <h1 className="font-['Space_Grotesk'] text-5xl font-bold leading-tight text-white md:text-7xl">
 
                         Performance Marketing

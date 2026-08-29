@@ -42,17 +42,6 @@ function Footer() {
                 {/* Divider */}
                 <div className="my-16 h-px bg-white/10" />
 
-                {/* Bottom */}
-                {/* <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-                    <div>
-                        <h3 className="font-['Space_Grotesk'] text-3xl font-bold text-white">
-                            Salman<span className="text-violet-500">.</span>
-                        </h3>
-
-                        <p className="mt-3 text-zinc-500">
-                            Performance Marketer • Meta Ads Specialist • Video Editor
-                        </p>
-                    </div> */}
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
                     <div>
                         <a
@@ -89,14 +78,14 @@ function Footer() {
                             <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '20px' }} />
                         </a>
 
-                        <a
+                        {/* <a
                             href="https://linkedin.com/"
                             target="_blank"
                             rel="noreferrer"
                             className="rounded-full border border-white/10 p-3 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"
                         >
                             <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: '20px' }} />
-                        </a>
+                        </a> */}
 
                         <a
                             href="https://www.instagram.com/growthstudiobysalman/"
@@ -107,14 +96,7 @@ function Footer() {
                             <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
                         </a>
 
-                        {/* <a
-                            href="https://github.com/"
-                            target="_blank"
-                            Back to top rel="noreferrer"
-                            className="rounded-full border border-white/10 p-3 text-zinc-400 transition hover:border-violet-500/40 hover:text-violet-400"
-                        >
-                            <FontAwesomeIcon icon={faGithub} style={{ fontSize: '20px' }} />
-                        </a> */}
+
                     </div>
                 </div>
 

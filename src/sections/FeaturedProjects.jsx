@@ -64,9 +64,8 @@ function FeaturedProjects() {
 
                                 </div>
 
-
                                 <div className="rounded-full bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-300">
-                                    {project.roas} ROAS
+                                    {project.type}
                                 </div>
 
                             </div>
@@ -82,47 +81,36 @@ function FeaturedProjects() {
                             <div className="mt-8 grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
 
                                 <Metric
-                                    title="Budget"
-                                    value={project.budget}
+                                    title="Results"
+                                    value={project.results}
                                 />
 
                                 <Metric
-                                    title="CTR"
-                                    value={project.ctr}
+                                    title="Cost / Result"
+                                    value={project.costPerResult}
                                 />
 
                                 <Metric
-                                    title="CPA"
-                                    value={project.cpa}
+                                    title="Impressions"
+                                    value={project.impressions}
                                 />
 
                                 <Metric
-                                    title="ROAS"
-                                    value={project.roas}
+                                    title="Ad Spend"
+                                    value={project.adSpend}
                                 />
 
                             </div>
 
-
-                            {/* Image Placeholder */}
                             <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-
-                                <div className="flex aspect-video items-center justify-center text-sm text-zinc-600">
-                                    Campaign Screenshot
-                                </div>
-
+                                <img
+                                    src={project.image}
+                                    alt={`${project.client} case study`}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-auto w-full object-cover"
+                                />
                             </div>
-
-
-                            {/* Button */}
-                            <button className="mt-8 flex items-center gap-2 text-violet-400 transition group-hover:text-violet-300">
-
-                                View Case Study
-
-                                <ArrowUpRight size={18} />
-
-                            </button>
-
 
                         </motion.div>
 

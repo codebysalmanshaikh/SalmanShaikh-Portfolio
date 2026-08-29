@@ -63,7 +63,7 @@ function About() {
                         <div className="mt-10 flex flex-wrap gap-8">
                             <div>
                                 <h3 className="font-['Space_Grotesk'] text-4xl font-bold text-white">
-                                    8+
+                                    3+
                                 </h3>
                                 <p className="mt-2 text-zinc-500">
                                     Years in Creative Industry

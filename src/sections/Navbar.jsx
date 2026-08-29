@@ -71,15 +71,6 @@ function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
 
-        {/* <a
-          href="#hero"
-          onClick={(e) => handleNavClick(e, "#hero")}
-          className="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-white"
-        >
-          Growth Studio By Salman
-          <span className="text-violet-500">.</span>
-        </a> */}
-
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
